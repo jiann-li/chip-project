@@ -167,7 +167,7 @@
         </div>
 
         <a class="scroll-cue" href="#abstract" aria-label="Scroll to abstract">
-          <span>Enter the study</span><i></i>
+          <span>Start with the idea</span><i></i>
         </a>
       </header>
 
@@ -175,18 +175,19 @@
         <div class="container">
           <div class="section-heading reveal">
             <div class="section-index"><span>01</span> / Abstract</div>
-            <h2>One prior.<br /><em>Every interaction.</em></h2>
+            <h2>Shared structure.<br /><em>Conditioned by context.</em></h2>
           </div>
 
           <div class="abstract reveal">
             <div class="abstract-intro">
               <p class="lead">
-                CHIP is a unified, physics-grounded framework for learning reusable humanoid interaction skills from heterogeneous motion data.
+                CHIP models navigation, object interaction, and composition as context-conditioned uses of a shared interaction prior.
               </p>
               <p class="thesis">
-                <span>Core idea</span>
-                Organize reusable skills around interaction context, not motion alone.
+                <span>Key insight</span>
+                The behavior a humanoid needs depends on its motion history together with the surrounding scene, object, and task.
               </p>
+
             </div>
 
             <div class="abstract-body">
@@ -202,17 +203,22 @@
             </div>
           </div>
 
-          <div class="capability-ticker reveal" aria-label="Supported capabilities">
-            <div>
-              <span>Scene-aware locomotion</span><i></i>
-              <span>Whole-body collision avoidance</span><i></i>
-              <span>Contact-rich manipulation</span><i></i>
-              <span>Object transport</span><i></i>
-              <span>Skill composition</span><i></i>
-              <span>Scene-aware locomotion</span><i></i>
-              <span>Whole-body collision avoidance</span><i></i>
-              <span>Contact-rich manipulation</span><i></i>
-            </div>
+          <div class="insight-grid reveal" aria-label="Key insights">
+            <article class="insight-card">
+              <span>01 / Shared structure</span>
+              <h3>A shared interaction space</h3>
+              <p>Teacher behaviors for scene interaction and object interaction are distilled into one discrete skill space.</p>
+            </article>
+            <article class="insight-card">
+              <span>02 / Context</span>
+              <h3>Context-conditioned selection</h3>
+              <p>Humanoid history, scene geometry, object state, and task context together shape the categorical distribution over skill tokens.</p>
+            </article>
+            <article class="insight-card">
+              <span>03 / Adaptation</span>
+              <h3>Prior-guided adaptation</h3>
+              <p>Downstream policies optimize task rewards with PPO while KL regularization keeps adaptation anchored to the frozen prior.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -323,10 +329,10 @@
           <div class="section-heading section-heading-split reveal">
             <div>
               <div class="section-index"><span>03</span> / Behaviors</div>
-              <h2>Built to interact,<br /><em>not just move.</em></h2>
+              <h2>What the prior<br /><em>enables.</em></h2>
             </div>
             <p>
-              One continuous policy connects environment-aware navigation and object-centric manipulation across cluttered 3D scenes.
+              Policies adapted from the same prior support scene navigation, object transport, and their composition in continuous episodes.
             </p>
           </div>
 
@@ -354,7 +360,6 @@
                 <button class="clip-button" type="button" data-video-src="assets/scene_navigation_03.mp4" aria-label="Play navigation clip 2" aria-pressed="false">02</button>
                 <button class="clip-button" type="button" data-video-src="assets/scene_navigation_w_subgoals.mp4" aria-label="Play navigation with subgoals" aria-pressed="false">03</button>
               </div>
-              <div class="behavior-badge">Collision ↓ 0.02</div>
               <button class="video-toggle" type="button" aria-label="Pause navigation video">
                 <span aria-hidden="true"></span><b>Pause</b>
               </button>
@@ -419,83 +424,63 @@
           <div class="section-heading section-heading-split reveal">
             <div>
               <div class="section-index"><span>04</span> / Results</div>
-              <h2>Unified control.<br /><em>Across tasks.</em></h2>
+              <h2 class="results-title">Quantitative evaluation</h2>
             </div>
             <p>
-              Among the evaluated baselines, CHIP achieves the highest object-relocation and compositional success rates while attaining the lowest collision and failure rates in scene navigation.
+              The experiments test whether a shared interaction prior can support scene navigation, object relocation, and composition. Results follow the paper's in-distribution protocol, with an additional held-out-scene evaluation.
             </p>
           </div>
 
-          <div class="headline-results">
-            <article class="result-number reveal">
-              <span>Scene navigation</span>
-              <strong><b data-count="90.1">90.1</b><sup>%</sup></strong>
-              <p>success · <em>0.02 collision score</em></p>
-            </article>
-            <article class="result-number reveal">
-              <span>Object relocation</span>
-              <strong><b data-count="88.2">88.2</b><sup>%</sup></strong>
-              <p>success · <em>0.10 m final distance</em></p>
-            </article>
-            <article class="result-number reveal">
-              <span>Compositional task</span>
-              <strong><b data-count="71.4">71.4</b><sup>%</sup></strong>
-              <p>full-task success · <em>best among evaluated methods</em></p>
-            </article>
+          <div class="results-panel reveal">
+            <div class="results-table-wrap">
+              <table class="results-table">
+                <caption>Task success rate (%)</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Method</th>
+                    <th scope="col">Scene navigation</th>
+                    <th scope="col">Object relocation</th>
+                    <th scope="col">Composition</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="is-ours">
+                    <th scope="row">CHIP <small>Ours</small></th>
+                    <td>90.1</td>
+                    <td>88.2</td>
+                    <td>71.4</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">TokenHSI</th>
+                    <td>93.3</td>
+                    <td>84.8</td>
+                    <td>66.8</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">MaskedMimic</th>
+                    <td>33.8</td>
+                    <td>44.1</td>
+                    <td>0.0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="results-notes">
+              <p><span>Additional CHIP metrics</span>Navigation collision score: 0.02 · Object final distance: 0.10 m</p>
+              <p>Values are reproduced from Table 1 in the paper. The comparison uses randomized in-distribution evaluation on scenes and object instances used for downstream training.</p>
+            </div>
           </div>
 
-          <div class="benchmark-panel reveal">
-            <div class="benchmark-heading">
-              <div>
-                <span>Quantitative comparison</span>
-                <h3>Task success rate <small>(%)</small></h3>
-              </div>
-              <div class="legend"><span><i class="ours"></i>CHIP</span><span><i></i>Prior work</span></div>
-            </div>
-
-            <div class="benchmark-chart">
-              <div class="benchmark-group">
-                <div class="benchmark-label"><span>Scene navigation</span><small>Success ↑</small></div>
-                <div class="bars">
-                  <div class="bar-row"><span>CHIP</span><div class="bar-track"><i class="bar ours" style="--value: 90.1%"></i></div><b>90.1</b></div>
-                  <div class="bar-row"><span>TokenHSI</span><div class="bar-track"><i class="bar" style="--value: 93.3%"></i></div><b>93.3</b></div>
-                  <div class="bar-row"><span>MaskedMimic</span><div class="bar-track"><i class="bar" style="--value: 33.8%"></i></div><b>33.8</b></div>
-                </div>
-              </div>
-
-              <div class="benchmark-group">
-                <div class="benchmark-label"><span>Object relocation</span><small>Success ↑</small></div>
-                <div class="bars">
-                  <div class="bar-row"><span>CHIP</span><div class="bar-track"><i class="bar ours" style="--value: 88.2%"></i></div><b>88.2</b></div>
-                  <div class="bar-row"><span>TokenHSI</span><div class="bar-track"><i class="bar" style="--value: 84.8%"></i></div><b>84.8</b></div>
-                  <div class="bar-row"><span>MaskedMimic</span><div class="bar-track"><i class="bar" style="--value: 44.1%"></i></div><b>44.1</b></div>
-                </div>
-              </div>
-
-              <div class="benchmark-group">
-                <div class="benchmark-label"><span>Compositional</span><small>Success ↑</small></div>
-                <div class="bars">
-                  <div class="bar-row"><span>CHIP</span><div class="bar-track"><i class="bar ours" style="--value: 71.4%"></i></div><b>71.4</b></div>
-                  <div class="bar-row"><span>TokenHSI</span><div class="bar-track"><i class="bar" style="--value: 66.8%"></i></div><b>66.8</b></div>
-                  <div class="bar-row"><span>MaskedMimic</span><div class="bar-track"><i class="bar" style="--value: 0%"></i></div><b>0.0</b></div>
-                </div>
-              </div>
-            </div>
-            <p class="benchmark-note">Values are reproduced from Table 1 in the paper. The comparison uses randomized in-distribution evaluation on scenes and object instances used for downstream training.</p>
-          </div>
-
-          <div class="generalization reveal">
-            <div class="generalization-copy">
+          <div class="heldout-panel reveal">
+            <div class="heldout-copy">
               <span>Held-out scenes</span>
-              <h3>Performance on held-out scenes.</h3>
+              <h3>Evaluation on held-out scenes.</h3>
               <p>CHIP retains high navigation and composition success in held-out scenes.</p>
             </div>
-            <div class="radial-stat" style="--percent: 86.1">
-              <div><strong>86.1<sup>%</sup></strong><span>Navigation</span></div>
-            </div>
-            <div class="radial-stat radial-stat-pink" style="--percent: 60.2">
-              <div><strong>60.2<sup>%</sup></strong><span>Composition</span></div>
-            </div>
+            <dl class="heldout-metrics">
+              <div><dt>Navigation success</dt><dd>86.1%</dd></div>
+              <div><dt>Composition success</dt><dd>60.2%</dd></div>
+            </dl>
           </div>
         </div>
       </section>

@@ -176,38 +176,6 @@
 
   document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
-  const counterObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const element = entry.target;
-        const raw = element.dataset.count;
-        const target = Number(raw);
-        const decimals = raw.includes(".") ? raw.split(".")[1].length : 0;
-        const duration = reducedMotion ? 0 : 1300;
-        const start = performance.now();
-
-        function tick(now) {
-          const elapsed = duration ? Math.min(1, (now - start) / duration) : 1;
-          const eased = 1 - Math.pow(1 - elapsed, 4);
-          const current = target * eased;
-          element.textContent = current.toLocaleString("en-US", {
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals,
-          });
-          if (elapsed < 1) requestAnimationFrame(tick);
-        }
-
-        requestAnimationFrame(tick);
-        observer.unobserve(element);
-      });
-    },
-    { threshold: 0.55 },
-  );
-
-  document.querySelectorAll("[data-count]").forEach((element) => counterObserver.observe(element));
-
   const behaviorVideos = [...document.querySelectorAll(".behavior-media")];
   const userPausedVideos = new WeakSet();
 
