@@ -2709,7 +2709,7 @@ img {
   padding: 0 0 0 8px;
   color: rgba(240, 239, 232, 0.95);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(43px, 5.2vw, 74px);
+  font-size: clamp(39px, 4.7vw, 66px);
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.065em;
@@ -2718,17 +2718,17 @@ img {
 }
 
 .cinematic .paper-title {
-  max-width: 570px;
+  max-width: 640px;
   margin: 24px 0 15px 10px;
-  color: rgba(240, 239, 232, 0.68);
-  font-size: clamp(12px, 1.15vw, 16px);
+  color: rgba(240, 239, 232, 0.82);
+  font-size: clamp(14px, 1.3vw, 18px);
   font-weight: 390;
   line-height: 1.55;
   text-shadow: 0 2px 15px #000;
 }
 
 .cinematic .paper-title span {
-  color: rgba(240, 239, 232, 0.95);
+  color: rgba(240, 239, 232, 0.98);
   font-weight: 620;
 }
 
@@ -3532,7 +3532,7 @@ img {
   }
 
   .cinematic .title-tail {
-    font-size: clamp(43px, 9vw, 70px);
+    font-size: clamp(39px, 8.2vw, 63px);
   }
 
   .cinematic .paper-title {
@@ -3662,7 +3662,7 @@ img {
 
   .cinematic .title-tail {
     padding-left: 2px;
-    font-size: 12vw;
+    font-size: 10.8vw;
   }
 
   .cinematic .paper-title,
@@ -3674,7 +3674,7 @@ img {
 
   .cinematic .paper-title {
     margin-top: 22px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .cinematic .authors a {
