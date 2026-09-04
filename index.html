@@ -175,22 +175,21 @@
         <div class="container">
           <div class="section-heading reveal">
             <div class="section-index"><span>01</span> / Abstract</div>
-            <h2>Shared structure.<br /><em>Conditioned by context.</em></h2>
+            <h2>From motion priors.<br /><em>To interaction priors.</em></h2>
           </div>
 
           <div class="abstract reveal">
             <div class="abstract-intro">
-              <p class="lead">
-                A shared, context-conditioned prior spans navigation, object interaction, and composition.
-              </p>
+              <ul class="abstract-keywords" aria-label="CHIP core concepts">
+                <li><span>01</span><strong>Heterogeneous Motion Data</strong></li>
+                <li><span>02</span><strong>Physics-Grounded Interaction Skills</strong></li>
+                <li><span>03</span><strong>Context-Conditioned Interaction Prior</strong></li>
+              </ul>
             </div>
 
             <div class="abstract-body">
               <p>
-                Physics-based controllers are often specialized for scene-aware locomotion or object manipulation. CHIP distills both behavior families into a shared discrete skill space and models a categorical distribution over skills conditioned on humanoid history, scene geometry, object state, and task context.
-              </p>
-              <p>
-                Training proceeds in three stages: physics-based motion imitation acquires grounded teacher behaviors; a VQ-VAE and transformer distill them into the interaction prior; and PPO adapts downstream policies under KL regularization to the frozen prior. We evaluate the resulting framework on scene navigation, object relocation, and compositional interaction in simulation.
+                Developing unified physics-based humanoid controllers that can navigate complex 3D scenes and manipulate objects remains a longstanding challenge. Existing approaches are often specialized for either locomotion or object-centric manipulation, or rely on task-specific reward engineering that does not scale well across diverse behaviors. We present CHIP, a unified, physics-grounded framework for learning reusable humanoid interaction skills from heterogeneous motion data. Central to our approach is a conditional interaction prior that models a context-dependent distribution over these skills within a shared discrete space. Our method is trained in three stages. We first learn physics-based motion-imitation policies that acquire grounded teacher behaviors from heterogeneous interaction data. We then distill these behaviors into a context-conditioned interaction prior that captures reusable motion structure across locomotion and manipulation. Finally, we initialize downstream task policies from the pretrained prior and adapt them through prior-regularized online RL post-training. Experiments on a diverse suite of humanoid interaction tasks show that our approach supports scene-aware locomotion, contact-rich object manipulation, and compositional behaviors such as environment-aware object transport and long-horizon skill sequencing, while producing smooth transitions and physically plausible motion.
               </p>
             </div>
           </div>

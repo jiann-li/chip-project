@@ -922,17 +922,54 @@ img {
 .abstract {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  align-items: start;
+  align-items: stretch;
   gap: clamp(55px, 9vw, 140px);
 }
 
-.abstract-intro .lead {
-  margin: 0 0 28px;
-  color: #11161a;
-  font-size: clamp(24px, 2.5vw, 34px);
-  font-weight: 610;
-  letter-spacing: -0.035em;
-  line-height: 1.28;
+.abstract-intro {
+  display: flex;
+}
+
+.abstract-keywords {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.abstract-keywords li {
+  display: grid;
+  min-height: 72px;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  border: 1px solid rgba(17, 23, 27, 0.16);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.abstract-keywords li:last-child {
+  border-left: 3px solid #759622;
+}
+
+.abstract-keywords span {
+  color: #747b78;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.abstract-keywords strong {
+  color: #181c1a;
+  font-size: clamp(16px, 1.35vw, 19px);
+  font-weight: 580;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 .abstract-body > p {
@@ -940,10 +977,6 @@ img {
   color: #555e65;
   font-size: 16px;
   line-height: 1.85;
-}
-
-.abstract-body > p + p {
-  margin-top: 18px;
 }
 
 .tilt-card:hover {
@@ -1514,8 +1547,8 @@ img {
 
 .results-notes p {
   margin: 0;
-  color: #747e86;
-  font-size: 11px;
+  color: #8a949b;
+  font-size: 12px;
   line-height: 1.7;
 }
 
@@ -1741,7 +1774,7 @@ img {
 .code-window code {
   color: #d9e0e6;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: clamp(10px, 1.1vw, 13px);
+  font-size: clamp(11px, 1.1vw, 13px);
   line-height: 1.85;
 }
 
@@ -2004,6 +2037,15 @@ img {
   .abstract {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+
+  .abstract-intro {
+    display: block;
+  }
+
+  .abstract-keywords {
+    height: auto;
+    grid-template-rows: none;
   }
 
   .section-heading-split > p {
@@ -2338,7 +2380,7 @@ img {
 .cinematic .nav-links a {
   color: rgba(240, 239, 232, 0.7);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -2352,7 +2394,7 @@ img {
   background: rgba(5, 6, 6, 0.3);
   color: var(--white);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   backdrop-filter: blur(12px);
@@ -2475,13 +2517,13 @@ img {
 
 .cinematic .authors a {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .cinematic .affiliations {
-  color: rgba(240, 239, 232, 0.43);
-  font-size: 9px;
+  color: rgba(240, 239, 232, 0.58);
+  font-size: 11px;
 }
 
 .cinematic .hero-actions {
@@ -2493,7 +2535,7 @@ img {
   padding: 0 17px;
   border-radius: 1px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2774,18 +2816,11 @@ img {
   margin-bottom: 72px;
 }
 
-.cinematic .abstract .lead {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(24px, 2.6vw, 36px);
-  font-weight: 400;
-  line-height: 1.22;
-}
-
 .cinematic .abstract-body > p {
   max-width: 630px;
   color: #555752;
-  font-size: 14px;
-  line-height: 1.95;
+  font-size: 16px;
+  line-height: 1.78;
 }
 
 .cinematic .tilt-card:hover {
@@ -2870,14 +2905,14 @@ img {
 .cinematic .method-card p {
   max-width: 330px;
   color: rgba(240, 239, 232, 0.5);
-  font-size: 11px;
-  line-height: 1.75;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .cinematic .card-tags span {
   border-color: rgba(255, 255, 255, 0.2);
   color: rgba(240, 239, 232, 0.58);
-  font-size: 7px;
+  font-size: 9px;
 }
 
 .cinematic .capabilities {
@@ -2947,9 +2982,9 @@ img {
 
 .cinematic .behavior-card-copy p {
   max-width: 390px;
-  color: rgba(240, 239, 232, 0.59);
-  font-size: 11px;
-  line-height: 1.75;
+  color: rgba(240, 239, 232, 0.72);
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .cinematic .clip-switcher {
@@ -3291,7 +3326,7 @@ img {
   }
 
   .cinematic .authors a {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .cinematic .hero-actions .button {
@@ -3405,7 +3440,6 @@ img {
 .cinematic .section-heading h2 em,
 .cinematic .citation-copy h2 em,
 .cinematic .section-heading-split > p,
-.cinematic .abstract .lead,
 .cinematic .method-figure figcaption,
 .cinematic .method-card-top b,
 .cinematic .method-card h3,
@@ -3446,12 +3480,6 @@ img {
 .cinematic .section-heading-split > p {
   font-weight: 500;
   letter-spacing: -0.035em;
-}
-
-.cinematic .abstract .lead {
-  font-weight: 500;
-  line-height: 1.28;
-  letter-spacing: -0.042em;
 }
 
 .cinematic .method-figure figcaption {
@@ -3517,6 +3545,14 @@ img {
 .cinematic .citation-index span,
 .cinematic .citation-copy .section-index span,
 .cinematic .citation-copy h2 em {
+  color: var(--pink-ink);
+}
+
+.cinematic .overview .abstract-keywords li:last-child {
+  border-left-color: var(--pink-ink);
+}
+
+.cinematic .overview .abstract-keywords li:last-child span {
   color: var(--pink-ink);
 }
 
@@ -3638,7 +3674,8 @@ img {
 }
 
 .cinematic .pipeline-original-figure figcaption {
-  font-size: 10px;
+  color: rgba(240, 239, 232, 0.64);
+  font-size: 12px;
 }
 
 @media (max-width: 820px) {
@@ -3657,7 +3694,7 @@ img {
 
 @media (max-width: 560px) {
   .pipeline-original-figure .figure-source {
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .cinematic .pipeline-original-wrap {
@@ -3730,7 +3767,7 @@ img {
 }
 
 .cinematic .method .method-card p {
-  color: rgba(20, 21, 21, 0.58);
+  color: rgba(20, 21, 21, 0.68);
 }
 
 .cinematic .method .card-tags span {
