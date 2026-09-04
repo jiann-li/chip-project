@@ -512,15 +512,6 @@ img {
   opacity: 0.67;
 }
 
-.button-ghost span {
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.07);
-  font-size: 8px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 .sequence-wrap {
   position: relative;
   z-index: 2;
