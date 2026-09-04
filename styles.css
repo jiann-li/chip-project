@@ -952,54 +952,6 @@ img {
   transform: translateY(-7px) rotate(-0.5deg);
 }
 
-.insight-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: clamp(80px, 10vw, 140px);
-  border-top: 1px solid rgba(17, 23, 27, 0.2);
-  border-bottom: 1px solid rgba(17, 23, 27, 0.2);
-}
-
-.insight-card {
-  min-width: 0;
-  padding: 34px clamp(24px, 3vw, 44px) 38px;
-  border-right: 1px solid rgba(17, 23, 27, 0.16);
-}
-
-.insight-card:first-child {
-  padding-left: 0;
-}
-
-.insight-card:last-child {
-  padding-right: 0;
-  border-right: 0;
-}
-
-.insight-card > span {
-  color: #66706f;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.insight-card h3 {
-  margin: 30px 0 14px;
-  color: #151817;
-  font-size: clamp(21px, 2vw, 28px);
-  font-weight: 580;
-  letter-spacing: -0.04em;
-  line-height: 1.08;
-}
-
-.insight-card p {
-  margin: 0;
-  color: #5a605c;
-  font-size: 13px;
-  line-height: 1.75;
-}
-
 .method {
   overflow: hidden;
   background:
@@ -2054,23 +2006,6 @@ img {
     gap: 38px;
   }
 
-  .insight-grid {
-    grid-template-columns: 1fr;
-    margin-top: 72px;
-  }
-
-  .insight-card,
-  .insight-card:first-child,
-  .insight-card:last-child {
-    padding: 30px 0 34px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(17, 23, 27, 0.16);
-  }
-
-  .insight-card:last-child {
-    border-bottom: 0;
-  }
-
   .section-heading-split > p {
     max-width: 600px;
   }
@@ -2217,10 +2152,6 @@ img {
   .section-heading h2,
   .citation-copy h2 {
     font-size: 15vw;
-  }
-
-  .insight-grid {
-    margin-top: 58px;
   }
 
   .method-figure {
@@ -2862,24 +2793,6 @@ img {
   transform: translateY(-4px);
 }
 
-.cinematic .insight-grid {
-  margin-top: 120px;
-  border-color: rgba(20, 21, 21, 0.25);
-}
-
-.cinematic .insight-card {
-  border-color: rgba(20, 21, 21, 0.2);
-}
-
-.cinematic .insight-card > span {
-  color: #536614;
-}
-
-.cinematic .insight-card h3 {
-  font-weight: 540;
-  letter-spacing: -0.045em;
-}
-
 .cinematic .method {
   background:
     radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.035), transparent 28%),
@@ -3304,10 +3217,6 @@ img {
     gap: 42px;
   }
 
-  .cinematic .insight-grid {
-    margin-top: 72px;
-  }
-
   .cinematic .section-heading-split > p {
     max-width: 620px;
   }
@@ -3464,10 +3373,6 @@ img {
   .cinematic .video-toggle {
     right: 18px;
     bottom: 20px;
-  }
-
-  .cinematic .insight-grid {
-    margin-top: 58px;
   }
 
   .cinematic .results-table caption {
