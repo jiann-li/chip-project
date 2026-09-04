@@ -946,31 +946,6 @@ img {
   margin-top: 18px;
 }
 
-.thesis {
-  position: relative;
-  margin: 38px 0 0;
-  padding: 23px 24px 23px 28px;
-  border-left: 3px solid #759622;
-  background: rgba(0, 0, 0, 0.035);
-  color: #283015;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 21px;
-  font-style: italic;
-  line-height: 1.45;
-}
-
-.thesis span {
-  display: block;
-  margin-bottom: 5px;
-  color: #6c757a;
-  font-family: Inter, "Helvetica Neue", sans-serif;
-  font-size: 9px;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
 .tilt-card:hover {
   z-index: 2;
   box-shadow: 0 20px 50px rgba(19, 27, 16, 0.12);
@@ -2544,18 +2519,18 @@ img {
 }
 
 .cinematic .paper-title {
-  max-width: 640px;
+  max-width: 760px;
   margin: 24px 0 15px 10px;
   color: rgba(240, 239, 232, 0.82);
-  font-size: clamp(14px, 1.3vw, 18px);
-  font-weight: 390;
-  line-height: 1.55;
+  font-size: clamp(18px, 1.7vw, 24px);
+  font-weight: 450;
+  line-height: 1.4;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.78);
 }
 
 .cinematic .paper-title span {
   color: rgba(240, 239, 232, 0.98);
-  font-weight: 620;
+  font-weight: 560;
 }
 
 .cinematic .authors,
@@ -2860,11 +2835,17 @@ img {
 
 .cinematic .overview .section-heading h2 {
   color: #111212;
+  font-size: clamp(52px, 6.5vw, 88px);
+  line-height: 0.9;
+}
+
+.cinematic .overview .section-heading {
+  margin-bottom: 72px;
 }
 
 .cinematic .abstract .lead {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(28px, 3.2vw, 45px);
+  font-size: clamp(24px, 2.6vw, 36px);
   font-weight: 400;
   line-height: 1.22;
 }
@@ -2874,14 +2855,6 @@ img {
   color: #555752;
   font-size: 14px;
   line-height: 1.95;
-}
-
-.cinematic .thesis {
-  margin-top: 48px;
-  padding: 27px 0 27px 28px;
-  border-color: #536614;
-  background: transparent;
-  font-size: 24px;
 }
 
 .cinematic .tilt-card:hover {
@@ -3401,7 +3374,11 @@ img {
 
   .cinematic .paper-title {
     margin-top: 22px;
-    font-size: 13px;
+    font-size: 16px;
+  }
+
+  .cinematic .overview .section-heading h2 {
+    font-size: 13vw;
   }
 
   .cinematic .authors a {
@@ -3524,7 +3501,6 @@ img {
 .cinematic .citation-copy h2 em,
 .cinematic .section-heading-split > p,
 .cinematic .abstract .lead,
-.cinematic .thesis,
 .cinematic .method-figure figcaption,
 .cinematic .method-card-top b,
 .cinematic .method-card h3,
@@ -3571,11 +3547,6 @@ img {
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.042em;
-}
-
-.cinematic .thesis {
-  font-weight: 440;
-  letter-spacing: -0.025em;
 }
 
 .cinematic .method-figure figcaption {
@@ -3642,10 +3613,6 @@ img {
 .cinematic .citation-copy .section-index span,
 .cinematic .citation-copy h2 em {
   color: var(--pink-ink);
-}
-
-.cinematic .overview .thesis {
-  border-color: var(--pink-ink);
 }
 
 .cinematic .method {

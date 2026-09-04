@@ -181,24 +181,16 @@
           <div class="abstract reveal">
             <div class="abstract-intro">
               <p class="lead">
-                CHIP models navigation, object interaction, and composition as context-conditioned uses of a shared interaction prior.
+                A shared, context-conditioned prior spans navigation, object interaction, and composition.
               </p>
-              <p class="thesis">
-                <span>Key insight</span>
-                The behavior a humanoid needs depends on its motion history together with the surrounding scene, object, and task.
-              </p>
-
             </div>
 
             <div class="abstract-body">
               <p>
-                Developing unified physics-based controllers that can both navigate complex 3D scenes and manipulate objects remains a longstanding challenge. Existing methods are commonly specialized for locomotion or object-centric manipulation, or depend on task-specific reward engineering that is difficult to scale. CHIP addresses this with a conditional interaction prior that models a context-dependent distribution over reusable skills in a shared discrete space.
+                Physics-based controllers are often specialized for scene-aware locomotion or object manipulation. CHIP distills both behavior families into a shared discrete skill space and models a categorical distribution over skills conditioned on humanoid history, scene geometry, object state, and task context.
               </p>
               <p>
-                Training proceeds in three stages: acquiring grounded teacher behaviors through physics-based motion imitation, distilling them into a context-conditioned interaction prior spanning locomotion and manipulation, and adapting downstream policies through prior-regularized online reinforcement learning.
-              </p>
-              <p>
-                Across diverse humanoid interaction tasks, CHIP supports scene-aware locomotion, contact-rich object manipulation, and compositional behaviors—including environment-aware object transport and long-horizon skill sequencing—while maintaining smooth transitions and physically plausible motion.
+                Training proceeds in three stages: physics-based motion imitation acquires grounded teacher behaviors; a VQ-VAE and transformer distill them into the interaction prior; and PPO adapts downstream policies under KL regularization to the frozen prior. We evaluate the resulting framework on scene navigation, object relocation, and compositional interaction in simulation.
               </p>
             </div>
           </div>
