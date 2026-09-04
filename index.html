@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CHIP is a unified, physics-grounded framework for context-conditioned humanoid interaction in complex 3D environments."
+    />
+    <meta name="citation_title" content="Unifying Physics-Based Humanoid Interaction with a Context-Conditioned Interaction Prior" />
+    <meta name="citation_author" content="Jianan Li" />
+    <meta name="citation_author" content="Xiao Chen" />
+    <meta name="citation_author" content="Tien-Tsin Wong" />
+    <meta name="citation_publication_date" content="2026" />
+    <meta name="citation_publisher" content="Association for Computing Machinery" />
+    <meta name="citation_conference_title" content="SIGGRAPH Asia 2026 Conference Papers" />
+    <meta name="citation_isbn" content="979-8-4007-2842-6" />
+    <meta name="citation_doi" content="10.1145/3829340.3842357" />
+    <meta name="citation_language" content="en" />
+    <meta name="theme-color" content="#080b0f" />
+    <meta property="og:title" content="CHIP — Context-conditioned Humanoid Interaction Prior" />
+    <meta
+      property="og:description"
+      content="Unifying physics-based humanoid navigation, manipulation, and compositional interaction."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/hero-3.png" />
+    <title>CHIP — Context-conditioned Humanoid Interaction Prior</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="cinematic">
+    <div class="noise" aria-hidden="true"></div>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="CHIP home">
+        <span class="brand-mark">C</span>
+        <span class="brand-name">CHIP</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+    </nav>
+
+    <main>
+      <header class="hero" id="top">
+        <div class="hero-orb orb-one" aria-hidden="true"></div>
+        <div class="hero-orb orb-two" aria-hidden="true"></div>
+
+        <div class="hero-copy container">
+          <div class="eyebrow reveal">
+            <span class="eyebrow-dot"></span>
+            Physics-based humanoid–scene interaction in simulation
+            <span class="eyebrow-rule"></span>
+            SIGGRAPH Asia 2026
+          </div>
+
+          <h1 class="hero-title reveal">
+            <span class="chip-word" data-text="CHIP">CH<span class="chip-letter-i">I</span>P</span>
+            <span class="title-tail">Learning to move<br />and interact with the world.</span>
+          </h1>
+
+          <p class="paper-title reveal">
+            Unifying Physics-Based Humanoid Interaction with
+            <span>a Context-Conditioned Interaction Prior</span>
+          </p>
+
+          <div class="authors reveal" aria-label="Authors">
+            <a href="mailto:jnli22@cse.cuhk.edu.hk">Jianan Li<sup>1</sup></a>
+            <a href="mailto:cx123@ie.cuhk.edu.hk">Xiao Chen<sup>1</sup></a>
+            <a href="mailto:tt.wong@monash.edu">Tien-Tsin Wong<sup>2</sup></a>
+          </div>
+          <div class="affiliations reveal">
+            <span><sup>1</sup>The Chinese University of Hong Kong</span>
+            <span><sup>2</sup>Monash University</span>
+          </div>
+
+          <div class="hero-actions reveal">
+            <a class="button button-secondary" href="#capabilities">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 8 5-8 5z" /></svg>
+              Watch behaviors
+            </a>
+            <button class="button button-ghost" type="button" disabled title="Repository link coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 19c-4 .9-4-2-5-2.5M14 22v-3.5c0-1 .1-1.5-.5-2 3.3-.4 6.8-1.6 6.8-7A5.5 5.5 0 0 0 19 5.7 5 5 0 0 0 18.9 2S17.7 1.6 15 3.5a13 13 0 0 0-6 0C6.3 1.6 5.1 2 5.1 2A5 5 0 0 0 5 5.7a5.5 5.5 0 0 0-1.3 3.8c0 5.4 3.5 6.6 6.8 7-.6.5-.6 1.2-.5 2V22" />
+              </svg>
+              Code <span>soon</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="sequence-wrap container" id="behavior">
+          <div
+            class="sequence-stage"
+            tabindex="0"
+            role="group"
+            aria-label="Interactive five-stage CHIP behavior sequence. Use arrow keys or the timeline controls."
+          >
+            <div class="sequence-chrome sequence-chrome-top">
+              <span class="live-indicator"><i></i> CHIP / Simulation roll 01</span>
+              <span class="frame-counter"><b>01</b> / 05</span>
+            </div>
+
+            <div class="frames" aria-live="polite">
+              <img class="frame is-active" src="assets/hero-1.png" alt="Humanoid starts in a furnished 3D scene" />
+              <img class="frame" src="assets/hero-2.png" alt="Humanoid approaches a narrow gap" />
+              <img class="frame" src="assets/hero-3.png" alt="Humanoid picks up an object" />
+              <img class="frame" src="assets/hero-4.png" alt="Humanoid carries the object around an obstacle" />
+              <img class="frame" src="assets/hero-5.png" alt="Humanoid places the object at the goal" />
+            </div>
+
+            <div class="stage-vignette" aria-hidden="true"></div>
+            <div class="stage-grid" aria-hidden="true"></div>
+            <div class="stage-glow" aria-hidden="true"></div>
+            <div class="scrub-hint"><span>Drag to scrub</span><i></i></div>
+
+            <div class="sequence-caption">
+              <span class="caption-index">01</span>
+              <div>
+                <p class="caption-kicker">Continuous behavior</p>
+                <h2 class="caption-title">Start</h2>
+              </div>
+              <p class="caption-description">Observe the scene and begin a single, continuous interaction.</p>
+            </div>
+          </div>
+
+          <div class="sequence-controls" aria-label="Behavior stages">
+            <button class="sequence-step is-active" type="button" data-frame="0">
+              <span class="step-number">01</span><span class="step-label">Start</span><i></i>
+            </button>
+            <button class="sequence-step" type="button" data-frame="1">
+              <span class="step-number">02</span><span class="step-label">Pass sideways</span><i></i>
+            </button>
+            <button class="sequence-step" type="button" data-frame="2">
+              <span class="step-number">03</span><span class="step-label">Pick up</span><i></i>
+            </button>
+            <button class="sequence-step" type="button" data-frame="3">
+              <span class="step-number">04</span><span class="step-label">Aware carry</span><i></i>
+            </button>
+            <button class="sequence-step" type="button" data-frame="4">
+              <span class="step-number">05</span><span class="step-label">Place</span><i></i>
+            </button>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#abstract" aria-label="Scroll to abstract">
+          <span>Enter the study</span><i></i>
+        </a>
+      </header>
+
+      <section class="overview section" id="abstract">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div class="section-index"><span>01</span> / Abstract</div>
+            <h2>One prior.<br /><em>Every interaction.</em></h2>
+          </div>
+
+          <div class="abstract reveal">
+            <div class="abstract-intro">
+              <p class="lead">
+                CHIP is a unified, physics-grounded framework for learning reusable humanoid interaction skills from heterogeneous motion data.
+              </p>
+              <p class="thesis">
+                <span>Core idea</span>
+                Organize reusable skills around interaction context, not motion alone.
+              </p>
+            </div>
+
+            <div class="abstract-body">
+              <p>
+                Developing unified physics-based controllers that can both navigate complex 3D scenes and manipulate objects remains a longstanding challenge. Existing methods are commonly specialized for locomotion or object-centric manipulation, or depend on task-specific reward engineering that is difficult to scale. CHIP addresses this with a conditional interaction prior that models a context-dependent distribution over reusable skills in a shared discrete space.
+              </p>
+              <p>
+                Training proceeds in three stages: acquiring grounded teacher behaviors through physics-based motion imitation, distilling them into a context-conditioned interaction prior spanning locomotion and manipulation, and adapting downstream policies through prior-regularized online reinforcement learning.
+              </p>
+              <p>
+                Across diverse humanoid interaction tasks, CHIP supports scene-aware locomotion, contact-rich object manipulation, and compositional behaviors—including environment-aware object transport and long-horizon skill sequencing—while maintaining smooth transitions and physically plausible motion.
+              </p>
+            </div>
+          </div>
+
+          <div class="capability-ticker reveal" aria-label="Supported capabilities">
+            <div>
+              <span>Scene-aware locomotion</span><i></i>
+              <span>Whole-body collision avoidance</span><i></i>
+              <span>Contact-rich manipulation</span><i></i>
+              <span>Object transport</span><i></i>
+              <span>Skill composition</span><i></i>
+              <span>Scene-aware locomotion</span><i></i>
+              <span>Whole-body collision avoidance</span><i></i>
+              <span>Contact-rich manipulation</span><i></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="method section" id="method">
+        <div class="container">
+          <div class="section-heading section-heading-split reveal">
+            <div>
+              <div class="section-index"><span>02</span> / Method</div>
+              <h2>Acquire. Distill.<br /><em>Adapt.</em></h2>
+            </div>
+            <p>
+              A three-stage recipe turns heterogeneous demonstrations into a reusable interaction prior, then adapts it to new objectives without losing natural motion.
+            </p>
+          </div>
+
+          <figure class="method-figure pipeline-original-figure reveal">
+            <div class="figure-toolbar">
+              <span><i></i> Framework overview</span>
+              <a class="figure-source" href="assets/pipeline_overview_v3.svg" target="_blank" rel="noreferrer">
+                Original schematic <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="method-image-wrap pipeline-original-wrap">
+              <button
+                class="method-zoom-trigger"
+                type="button"
+                aria-haspopup="dialog"
+                aria-controls="method-lightbox"
+                aria-expanded="false"
+              >
+                <img
+                  class="pipeline-original-image"
+                  src="assets/pipeline_overview_v3.svg"
+                  alt="Original CHIP pipeline showing heterogeneous interaction data, physics-based imitation, generative distillation, reinforcement learning post-training, and downstream navigation, manipulation, and composite tasks"
+                  loading="lazy"
+                />
+                <span class="method-zoom-label" aria-hidden="true">
+                  <svg viewBox="0 0 20 20"><path d="M8.5 3.5a5 5 0 1 0 0 10 5 5 0 0 0 0-10ZM12 12l4.5 4.5M8.5 6v5M6 8.5h5" /></svg>
+                  View full size
+                </span>
+              </button>
+              <div class="scan-line" aria-hidden="true"></div>
+            </div>
+            <figcaption>
+              The original research schematic: heterogeneous HSI and HOI behaviors share one conditioning interface across scene, object, and task context.
+            </figcaption>
+          </figure>
+
+          <dialog
+            class="method-lightbox"
+            id="method-lightbox"
+            aria-labelledby="method-lightbox-title"
+            aria-describedby="method-lightbox-hint"
+          >
+            <div class="method-lightbox-shell">
+              <div class="method-lightbox-toolbar">
+                <div>
+                  <span>02 / Method</span>
+                  <strong id="method-lightbox-title">CHIP framework overview</strong>
+                </div>
+                <div class="method-lightbox-actions">
+                  <a href="assets/pipeline_overview_v3.svg" target="_blank" rel="noreferrer">Open SVG ↗</a>
+                  <button class="method-lightbox-close" type="button" aria-label="Close enlarged method figure">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 4 12 12M16 4 4 16" /></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="method-lightbox-viewport" tabindex="0">
+                <img
+                  src="assets/pipeline_overview_v3.svg"
+                  alt="Enlarged CHIP pipeline showing the complete three-stage framework and downstream tasks"
+                />
+              </div>
+              <p class="method-lightbox-hint" id="method-lightbox-hint">
+                <span class="method-lightbox-hint-desktop">Full-resolution vector schematic.</span>
+                <span class="method-lightbox-hint-mobile">Swipe horizontally to explore the complete pipeline.</span>
+                <span>Esc to close</span>
+              </p>
+            </div>
+          </dialog>
+
+          <div class="stage-cards">
+            <article class="method-card method-card-yellow reveal tilt-card">
+              <div class="method-card-top"><span>Stage I</span><b>01</b></div>
+              <h3>Physics-based imitation</h3>
+              <p>Specialist policies track retargeted human–scene and human–object motions inside physics simulation. Their rollouts provide grounded teacher behaviors spanning locomotion, whole-body object transport, and context-dependent interaction.</p>
+              <div class="card-tags"><span>Tracking</span><span>PPO</span><span>Simulation</span></div>
+            </article>
+            <article class="method-card method-card-pink reveal tilt-card">
+              <div class="method-card-top"><span>Stage II</span><b>02</b></div>
+              <h3>Generative distillation</h3>
+              <p>A VQ-VAE compresses teacher transitions into a shared 1,024-entry discrete codebook. A transformer then learns a categorical prior over skill tokens conditioned on humanoid history together with scene, object, and task context.</p>
+              <div class="card-tags"><span>VQ-VAE</span><span>Transformer</span><span>Categorical prior</span></div>
+            </article>
+            <article class="method-card method-card-blue reveal tilt-card">
+              <div class="method-card-top"><span>Stage III</span><b>03</b></div>
+              <h3>RL post-training</h3>
+              <p>Each downstream task policy is initialized from the pretrained prior and optimized with PPO. KL regularization toward a frozen, CFG-guided prior encourages task adaptation while retaining interaction structure learned from the demonstrations.</p>
+              <div class="card-tags"><span>PPO</span><span>KL prior</span><span>Simulation</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities section" id="capabilities">
+        <div class="container">
+          <div class="section-heading section-heading-split reveal">
+            <div>
+              <div class="section-index"><span>03</span> / Behaviors</div>
+              <h2>Built to interact,<br /><em>not just move.</em></h2>
+            </div>
+            <p>
+              One continuous policy connects environment-aware navigation and object-centric manipulation across cluttered 3D scenes.
+            </p>
+          </div>
+
+          <div class="behavior-grid">
+            <article class="behavior-card behavior-wide has-clips reveal">
+              <video
+                class="behavior-media"
+                src="assets/scene_navigation_02_teaser.mp4"
+                poster="assets/nav-squeeze.png"
+                aria-label="CHIP humanoid navigating a constrained scene"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="behavior-overlay"></div>
+              <div class="behavior-card-copy">
+                <span>01 / Navigate</span>
+                <h3>Whole-body<br />scene awareness</h3>
+                <p>Rotate, step sideways, and reshape posture to traverse narrow gaps with fewer collisions.</p>
+              </div>
+              <div class="clip-switcher" role="group" aria-label="Choose a scene-navigation clip">
+                <span>Clips</span>
+                <button class="clip-button is-active" type="button" data-video-src="assets/scene_navigation_02_teaser.mp4" aria-label="Play navigation clip 1" aria-pressed="true">01</button>
+                <button class="clip-button" type="button" data-video-src="assets/scene_navigation_03.mp4" aria-label="Play navigation clip 2" aria-pressed="false">02</button>
+                <button class="clip-button" type="button" data-video-src="assets/scene_navigation_w_subgoals.mp4" aria-label="Play navigation with subgoals" aria-pressed="false">03</button>
+              </div>
+              <div class="behavior-badge">Collision ↓ 0.02</div>
+              <button class="video-toggle" type="button" aria-label="Pause navigation video">
+                <span aria-hidden="true"></span><b>Pause</b>
+              </button>
+            </article>
+
+            <article class="behavior-card behavior-tall has-clips reveal">
+              <video
+                class="behavior-media"
+                src="assets/locomanipulation_01.mp4"
+                poster="assets/object-2.png"
+                aria-label="CHIP humanoid performing locomotion and object manipulation"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="behavior-overlay"></div>
+              <div class="behavior-card-copy">
+                <span>02 / Locomanipulate</span>
+                <h3>Carry while<br />avoiding obstacles</h3>
+                <p>Transport an object while continuously adapting whole-body motion to nearby scene geometry.</p>
+              </div>
+              <div class="clip-switcher" role="group" aria-label="Choose a locomotion-manipulation clip">
+                <span>Clips</span>
+                <button class="clip-button is-active" type="button" data-video-src="assets/locomanipulation_01.mp4" aria-label="Play manipulation clip 1" aria-pressed="true">01</button>
+                <button class="clip-button" type="button" data-video-src="assets/locomanipulation_02.mp4" aria-label="Play manipulation clip 2" aria-pressed="false">02</button>
+              </div>
+              <button class="video-toggle" type="button" aria-label="Pause manipulation video">
+                <span aria-hidden="true"></span><b>Pause</b>
+              </button>
+            </article>
+
+            <article class="behavior-card behavior-wide behavior-carry reveal">
+              <video
+                class="behavior-media"
+                src="assets/composition_01_teaser.mp4"
+                poster="assets/carry-avoid.png"
+                aria-label="CHIP humanoid composing navigation and object manipulation"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="behavior-overlay"></div>
+              <div class="behavior-card-copy">
+                <span>03 / Compose</span>
+                <h3>Navigate. Pick.<br />Carry. Place.</h3>
+                <p>Compose navigation and manipulation in one continuous episode. The policy is learned through RL post-training with a scripted stage transition, without complete trajectories in the pretraining motion data.</p>
+              </div>
+              <div class="path-graphic" aria-hidden="true"><i></i><i></i><i></i></div>
+              <button class="video-toggle" type="button" aria-label="Pause composition video">
+                <span aria-hidden="true"></span><b>Pause</b>
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="results section" id="results">
+        <div class="results-orb" aria-hidden="true"></div>
+        <div class="container">
+          <div class="section-heading section-heading-split reveal">
+            <div>
+              <div class="section-index"><span>04</span> / Results</div>
+              <h2>Unified control.<br /><em>Across tasks.</em></h2>
+            </div>
+            <p>
+              Among the evaluated baselines, CHIP achieves the highest object-relocation and compositional success rates while attaining the lowest collision and failure rates in scene navigation.
+            </p>
+          </div>
+
+          <div class="headline-results">
+            <article class="result-number reveal">
+              <span>Scene navigation</span>
+              <strong><b data-count="90.1">90.1</b><sup>%</sup></strong>
+              <p>success · <em>0.02 collision score</em></p>
+            </article>
+            <article class="result-number reveal">
+              <span>Object relocation</span>
+              <strong><b data-count="88.2">88.2</b><sup>%</sup></strong>
+              <p>success · <em>0.10 m final distance</em></p>
+            </article>
+            <article class="result-number reveal">
+              <span>Compositional task</span>
+              <strong><b data-count="71.4">71.4</b><sup>%</sup></strong>
+              <p>full-task success · <em>best among evaluated methods</em></p>
+            </article>
+          </div>
+
+          <div class="benchmark-panel reveal">
+            <div class="benchmark-heading">
+              <div>
+                <span>Quantitative comparison</span>
+                <h3>Task success rate <small>(%)</small></h3>
+              </div>
+              <div class="legend"><span><i class="ours"></i>CHIP</span><span><i></i>Prior work</span></div>
+            </div>
+
+            <div class="benchmark-chart">
+              <div class="benchmark-group">
+                <div class="benchmark-label"><span>Scene navigation</span><small>Success ↑</small></div>
+                <div class="bars">
+                  <div class="bar-row"><span>CHIP</span><div class="bar-track"><i class="bar ours" style="--value: 90.1%"></i></div><b>90.1</b></div>
+                  <div class="bar-row"><span>TokenHSI</span><div class="bar-track"><i class="bar" style="--value: 93.3%"></i></div><b>93.3</b></div>
+                  <div class="bar-row"><span>MaskedMimic</span><div class="bar-track"><i class="bar" style="--value: 33.8%"></i></div><b>33.8</b></div>
+                </div>
+              </div>
+
+              <div class="benchmark-group">
+                <div class="benchmark-label"><span>Object relocation</span><small>Success ↑</small></div>
+                <div class="bars">
+                  <div class="bar-row"><span>CHIP</span><div class="bar-track"><i class="bar ours" style="--value: 88.2%"></i></div><b>88.2</b></div>
+                  <div class="bar-row"><span>TokenHSI</span><div class="bar-track"><i class="bar" style="--value: 84.8%"></i></div><b>84.8</b></div>
+                  <div class="bar-row"><span>MaskedMimic</span><div class="bar-track"><i class="bar" style="--value: 44.1%"></i></div><b>44.1</b></div>
+                </div>
+              </div>
+
+              <div class="benchmark-group">
+                <div class="benchmark-label"><span>Compositional</span><small>Success ↑</small></div>
+                <div class="bars">
+                  <div class="bar-row"><span>CHIP</span><div class="bar-track"><i class="bar ours" style="--value: 71.4%"></i></div><b>71.4</b></div>
+                  <div class="bar-row"><span>TokenHSI</span><div class="bar-track"><i class="bar" style="--value: 66.8%"></i></div><b>66.8</b></div>
+                  <div class="bar-row"><span>MaskedMimic</span><div class="bar-track"><i class="bar" style="--value: 0%"></i></div><b>0.0</b></div>
+                </div>
+              </div>
+            </div>
+            <p class="benchmark-note">Values are reproduced from Table 1 in the paper. The comparison uses randomized in-distribution evaluation on scenes and object instances used for downstream training.</p>
+          </div>
+
+          <div class="generalization reveal">
+            <div class="generalization-copy">
+              <span>Held-out scenes</span>
+              <h3>Performance on held-out scenes.</h3>
+              <p>CHIP retains high navigation and composition success in held-out scenes.</p>
+            </div>
+            <div class="radial-stat" style="--percent: 86.1">
+              <div><strong>86.1<sup>%</sup></strong><span>Navigation</span></div>
+            </div>
+            <div class="radial-stat radial-stat-pink" style="--percent: 60.2">
+              <div><strong>60.2<sup>%</sup></strong><span>Composition</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="citation section" id="citation">
+        <div class="container citation-grid">
+          <div class="citation-copy reveal">
+            <div class="section-index citation-index"><span>05</span> / Citation</div>
+            <h2>Build on<br /><em>CHIP.</em></h2>
+            <p>If CHIP helps your research, please cite the paper.</p>
+            <div class="citation-actions">
+              <button class="button button-primary copy-citation" type="button">Copy BibTeX</button>
+            </div>
+          </div>
+
+          <div class="code-window citation-entry reveal">
+            <div class="code-toolbar">
+              <div><i></i><i></i><i></i></div>
+              <span>cite.bib</span>
+              <button class="icon-copy copy-citation" type="button" aria-label="Copy BibTeX">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 9h10v10H9zM5 15H4V5h10v1" /></svg>
+              </button>
+            </div>
+            <pre><code id="bibtex">@inproceedings{li2026chip,
+  author    = {Li, Jianan and Chen, Xiao and Wong, Tien-Tsin},
+  title     = {Unifying Physics-Based Humanoid Interaction with a Context-Conditioned Interaction Prior},
+  year      = {2026},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  booktitle = {SIGGRAPH Asia 2026 Conference Papers},
+  series    = {SA Conference Papers '26},
+  location  = {Kuala Lumpur, Malaysia},
+  isbn      = {979-8-4007-2842-6},
+  doi       = {10.1145/3829340.3842357}
+}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-brand"><span class="brand-mark">C</span><span>CHIP</span></div>
+        <p>Context-conditioned Humanoid Interaction Prior</p>
+        <div class="footer-links">
+          <a href="#citation">Citation</a>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite">BibTeX copied</div>
+    <script src="script.js"></script>
+  </body>
+</html>
